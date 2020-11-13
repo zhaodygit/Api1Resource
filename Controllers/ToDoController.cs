@@ -1,4 +1,5 @@
 ﻿using Api1Resource.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace Api1Resource.Controllers
 {
     [Route("api/todo")]
+    [Authorize]
     public class ToDoController : Controller
     {
         private readonly List<ToDo> _toDos;
